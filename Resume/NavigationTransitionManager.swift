@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate  {
+class NavigationTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate  {
     
     private var presenting = false
     
@@ -25,7 +25,7 @@ class MenuTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UI
         
         // assign references to our menu view controller and the 'bottom' view controller from the tuple
         // remember that our menuViewController will alternate between the from and to view controller depending if we're presenting or dismissing
-        let menuViewController = !self.presenting ? screens.from as! MenuViewController : screens.to as! MenuViewController
+        let menuViewController = !self.presenting ? screens.from as! NavigationViewController : screens.to as! NavigationViewController
         let bottomViewController = !self.presenting ? screens.to as UIViewController : screens.from as UIViewController
         
         let menuView = menuViewController.view
@@ -43,7 +43,10 @@ class MenuTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UI
         let duration = self.transitionDuration(transitionContext)
         
         // perform the animation!
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [], animations: {
+        
+
+        
+        UIView.animateWithDuration(duration, animations: {
             
                 if (self.presenting){
                     self.onStageMenuController(menuViewController) // onstage items: slide in
@@ -54,10 +57,7 @@ class MenuTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UI
 
             }, completion: { finished in
                 
-                // tell our transitionContext object that we've finished animating
-                transitionContext.completeTransition(true)
-                
-                // bug: we have to manually add our 'to view' back http://openradar.appspot.com/radar?id=5320103646199808
+                transitionContext.completeTransition(true)                
                 UIApplication.sharedApplication().keyWindow?.addSubview(screens.to.view)
                 
         })
@@ -68,29 +68,12 @@ class MenuTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UI
         return CGAffineTransformMakeTranslation(amount, 0)
     }
     
-    func offStageMenuController(menuViewController: MenuViewController){
-        
+    func offStageMenuController(menuViewController: NavigationViewController){
         menuViewController.view.alpha = 0
-        
-        
-        // setup paramaters for 2D transitions for animations
-        let topRowOffset  :CGFloat = 300
-        let _ :CGFloat = 150
-        let _  :CGFloat = 50
-        
-        
-        menuViewController.menuButtons[0].transform = self.offStage(-topRowOffset)
-        
-        
-        
     }
     
-    func onStageMenuController(menuViewController: MenuViewController){
-        
-        // prepare menu to fade in
+    func onStageMenuController(menuViewController: NavigationViewController){
         menuViewController.view.alpha = 1
-        
-        menuViewController.menuButtons[0].transform = CGAffineTransformIdentity
     }
     
     // return how many seconds the transiton animation will take
@@ -99,18 +82,13 @@ class MenuTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UI
     }
     
     // MARK: UIViewControllerTransitioningDelegate protocol methods
-    
-    // return the animataor when presenting a viewcontroller
-    // rememeber that an animator (or animation controller) is any object that aheres to the UIViewControllerAnimatedTransitioning protocol
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.presenting = true
         return self
     }
-    
-    // return the animator used when dismissing from a viewcontroller
+
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.presenting = false
         return self
     }
-    
 }
