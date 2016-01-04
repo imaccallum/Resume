@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Resume
 //
-//  Created by Ian MacCallum on 8/4/15.
+//  Created by Ian MacCallum on 11/4/15.
 //  Copyright © 2015 Ian MacCallum. All rights reserved.
 //
 
@@ -13,18 +13,10 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        application.statusBarHidden = true
-        
-        
-        // Import Web JSON to Core Data
-        let stackImporter = StackDataImporter(context: managedObjectContext, webService: StackWebService())
-        stackImporter.webService.deleteAllObjects()
-        stackImporter.importUser()
-        stackImporter.importReputation()
-        
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
         return true
     }
 
@@ -49,8 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext(managedObjectContext)
-        self.saveContext(backgroundContext)
+        self.saveContext()
     }
 
     // MARK: - Core Data stack
@@ -83,6 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            // Replace this with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
             abort()
         }
@@ -91,31 +84,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     lazy var managedObjectContext: NSManagedObjectContext = {
+        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
-        }()
-    
-    lazy var backgroundContext: NSManagedObjectContext = {
-        let coordinator = self.persistentStoreCoordinator
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = coordinator
-        return managedObjectContext
-        }()
+    }()
 
-    
     // MARK: - Core Data Saving support
-    func saveContext (context: NSManagedObjectContext) {
-        if context.hasChanges {
+
+    func saveContext () {
+        if managedObjectContext.hasChanges {
             do {
-                try context.save()
+                try managedObjectContext.save()
             } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
             }
         }
     }
+
 }
 

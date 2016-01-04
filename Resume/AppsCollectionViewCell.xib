@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,56 +13,10 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tuj-qr-VRw" customClass="UIBannerView" customModule="Resume" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="153.5"/>
-                        <animations/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi9-L1-2lG" customClass="UINavBannerView" customModule="Resume" customModuleProvider="target">
-                        <rect key="frame" x="240" y="0.0" width="80" height="80"/>
-                        <animations/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="oi9-L1-2lG" secondAttribute="height" multiplier="1:1" id="cIb-lU-oiK"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlE-AZ-07f" customClass="UIBannerView" customModule="Resume" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="326.5" width="320" height="153.5"/>
-                        <animations/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </subviews>
-                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="NlE-AZ-07f" firstAttribute="height" secondItem="ICS-Qq-RXz" secondAttribute="height" multiplier="0.32" id="1O0-mH-Zo1"/>
-                <constraint firstItem="Tuj-qr-VRw" firstAttribute="height" secondItem="ICS-Qq-RXz" secondAttribute="height" multiplier="0.32" id="D8X-ji-uVC"/>
-                <constraint firstItem="oi9-L1-2lG" firstAttribute="top" secondItem="Tuj-qr-VRw" secondAttribute="bottom" constant="8" id="ED4-Q9-1GA"/>
-                <constraint firstItem="Tuj-qr-VRw" firstAttribute="top" secondItem="ICS-Qq-RXz" secondAttribute="top" id="GaI-70-s0g"/>
-                <constraint firstAttribute="bottom" secondItem="NlE-AZ-07f" secondAttribute="bottom" id="HlG-zx-Tog"/>
-                <constraint firstAttribute="trailing" secondItem="oi9-L1-2lG" secondAttribute="trailing" id="Ln5-qs-ASw"/>
-                <constraint firstAttribute="trailing" secondItem="Tuj-qr-VRw" secondAttribute="trailing" id="Z5s-PY-TKw"/>
-                <constraint firstItem="Tuj-qr-VRw" firstAttribute="leading" secondItem="ICS-Qq-RXz" secondAttribute="leading" id="bii-yP-r6T"/>
-                <constraint firstItem="oi9-L1-2lG" firstAttribute="width" secondItem="ICS-Qq-RXz" secondAttribute="width" multiplier="0.25" id="hUB-9h-9Ax"/>
-                <constraint firstItem="NlE-AZ-07f" firstAttribute="leading" secondItem="ICS-Qq-RXz" secondAttribute="leading" id="qDF-Wg-6wf"/>
-                <constraint firstItem="oi9-L1-2lG" firstAttribute="top" secondItem="Tuj-qr-VRw" secondAttribute="top" id="sJC-ed-Y6k"/>
-                <constraint firstAttribute="trailing" secondItem="NlE-AZ-07f" secondAttribute="trailing" id="wH5-7u-Vpg"/>
-            </constraints>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <size key="customSize" width="346" height="483"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="ED4-Q9-1GA"/>
-                </mask>
-            </variation>
-            <connections>
-                <outlet property="bottomBannerView" destination="NlE-AZ-07f" id="xHd-hz-gbp"/>
-                <outlet property="navigationBannerView" destination="oi9-L1-2lG" id="Jmj-MN-kxS"/>
-                <outlet property="topBannerView" destination="Tuj-qr-VRw" id="g7p-Co-x0E"/>
-            </connections>
             <point key="canvasLocation" x="360" y="226"/>
         </collectionViewCell>
     </objects>

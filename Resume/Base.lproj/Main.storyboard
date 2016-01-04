@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MdN-0O-8y7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qza-s2-lnu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Collection View Controller-->
-        <scene sceneID="TKm-l4-dOJ">
+        <scene sceneID="LNv-gy-0nW">
             <objects>
-                <collectionViewController id="MdN-0O-8y7" customClass="CollectionViewController" customModule="Resume" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="YW3-mt-pfd">
+                <collectionViewController id="Qza-s2-lnu" customClass="CollectionViewController" customModule="Resume" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="a6L-kQ-EXv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VHd-1K-0I2">
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iY2-2w-3qS">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -20,62 +21,32 @@
                         </collectionViewFlowLayout>
                         <cells/>
                         <connections>
-                            <outlet property="dataSource" destination="MdN-0O-8y7" id="2dP-VI-N8e"/>
-                            <outlet property="delegate" destination="MdN-0O-8y7" id="Do7-Vg-28R"/>
+                            <outlet property="dataSource" destination="Qza-s2-lnu" id="Dd9-yt-ym6"/>
+                            <outlet property="delegate" destination="Qza-s2-lnu" id="FZX-si-aak"/>
                         </connections>
                     </collectionView>
-                    <connections>
-                        <segue destination="tOe-xZ-Gh2" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overFullScreen" id="bDo-CW-olw"/>
-                    </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jy4-RR-Uqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LdE-WD-oyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="202"/>
+            <point key="canvasLocation" x="220" y="393"/>
         </scene>
-        <!--Menu View Controller-->
-        <scene sceneID="bNJ-tA-DVy">
+        <!--Menu Table View Controller-->
+        <scene sceneID="QaH-Eh-7wv">
             <objects>
-                <viewController id="tOe-xZ-Gh2" customClass="MenuViewController" customModule="Resume" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y3h-ci-UN5"/>
-                        <viewControllerLayoutGuide type="bottom" id="HfJ-sr-wr4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V3k-3U-iAb">
+                <tableViewController storyboardIdentifier="MenuTableViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NEZ-Vz-HVH" customClass="MenuTableViewController" customModule="Resume" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sEY-3c-hUp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTg-92-A1b">
-                                <rect key="frame" x="193" y="10" width="122" height="140"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="unwindToMainViewController:" destination="tOe-xZ-Gh2" eventType="touchUpInside" id="2Ae-Zq-9OJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3u-8L-L3I" customClass="UIMenuButton" customModule="Resume" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="110"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-Ht-biE" customClass="UIMenuButton" customModule="Resume" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="57" width="120" height="110"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outletCollection property="menuButtons" destination="x3u-8L-L3I" collectionClass="NSMutableArray" id="7KH-0U-T1g"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="izh-52-ZY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="NEZ-Vz-HVH" id="gmE-T7-aFy"/>
+                            <outlet property="delegate" destination="NEZ-Vz-HVH" id="FlW-Sy-xRk"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25l-fL-fQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="202"/>
+            <point key="canvasLocation" x="214" y="1183"/>
         </scene>
     </scenes>
 </document>
