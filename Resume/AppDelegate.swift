@@ -14,9 +14,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+      
+      
+      
+      
+      Stack.fetchTags() { tags in
+        print("tags")
+        print(tags)
+      }
+      
+      Stack.fetchUser(3810673) { user in
+        print("user")
+        print(user)
+      }
+      
+      Stack.fetchAnswers { answers in
+        Stack.fetchQuestionTitles(answers.flatMap { $0.questionID }) { questions in
+          print("answers")
+          print(answers)
+          print("questions")
+          print(questions)
+        }
+      }
+      
+      
         return true
     }
 

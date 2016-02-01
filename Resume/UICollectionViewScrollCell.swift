@@ -10,15 +10,17 @@ import UIKit
 
 
 protocol CollectionViewCellScrollDelegate {
-    func didScroll(withOffset offset: CGPoint)
+  func didScroll(withOffset offset: CGPoint)
+  func didEndDisplay()
+  func willBeginDisplay()
 }
 
 class UICollectionViewScrollCell: UICollectionViewCell {
-    var parallaxMultiplier: CGFloat = 0.5
+  var parallaxMultiplier: CGFloat = 0.5
 }
 
 extension UICollectionViewScrollCell: CollectionViewCellScrollDelegate {
-    func didScroll(withOffset offset: CGPoint) {
-
-    }
+  func didScroll(withOffset offset: CGPoint) {}
+  func didEndDisplay() {}
+  func willBeginDisplay() {}
 }

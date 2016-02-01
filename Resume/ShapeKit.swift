@@ -47,7 +47,10 @@ class ShapeView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        shapeLayers.forEach { $0.updatePath(bounds) }
+        shapeLayers.forEach { shape in
+          shape.updatePath(bounds)
+          shape.zPosition = 1
+      }
     }
     
     func drawShapes() {

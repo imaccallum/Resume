@@ -60,4 +60,45 @@ class ShapeLayout {
             // Row 3
         ]
     }
+    
+    class func homeBottomLayout() -> [Shape] {
+        var shapes = homeTopLayout()
+        
+        shapes += [
+            Shape(tile: CGPoint(x: 14, y: 34),  type: .Diamond,     size: .ML,   direction: nil),
+            Shape(tile: CGPoint(x: 28, y: 37),  type: .Circle,      size: .SM,   direction: nil),
+            Shape(tile: CGPoint(x: 36, y: 34),  type: .Diamond,     size: .ML,   direction: nil),
+        
+        
+            Shape(tile: CGPoint(x: 2, y: 30),   type: .Triangle,    size: .M,   direction: .Left),
+            Shape(tile: CGPoint(x: 2, y: 30),   type: .Triangle,    size: .M,   direction: .Right),
+            Shape(tile: CGPoint(x: 2, y: 38),   type: .Diamond,     size: .M,   direction: nil),
+            Shape(tile: CGPoint(x: 4, y: 40),  type: .Circle,      size: .S,   direction: nil),
+            
+            Shape(tile: CGPoint(x: 12, y: 32),  type: .Triangle,    size: .SM,   direction: .Left),
+            Shape(tile: CGPoint(x: 24, y: 30),  type: .Diamond,     size: .S,   direction: nil),
+            Shape(tile: CGPoint(x: 34, y: 30),  type: .Square,      size: .S,   direction: nil),
+            Shape(tile: CGPoint(x: 48, y: 40),  type: .Semicircle,  size: .M,   direction: .Left),
+            Shape(tile: CGPoint(x: 50, y: 42),  type: .Semicircle,  size: .S,   direction: .Left),
+            Shape(tile: CGPoint(x: 44, y: 31),  type: .Triangle,    size: .M,   direction: .Right),
+
+            
+            Shape(tile: CGPoint(x: 32, y: 44),  type: .Circle,      size: .S,   direction: nil),
+            Shape(tile: CGPoint(x: 24, y: 44),  type: .Triangle,    size: .S,   direction: .Bottom),
+            Shape(tile: CGPoint(x: 25, y: 50),  type: .Triangle,    size: .M,   direction: .Left),
+            Shape(tile: CGPoint(x: 17, y: 50),  type: .Triangle,    size: .M,   direction: .Right),
+            Shape(tile: CGPoint(x: 10, y: 44),  type: .Diamond,     size: .SM,  direction: nil),
+
+            Shape(tile: CGPoint(x: 2, y: 46),   type: .Triangle,     size: .ML,   direction: .Top),
+            Shape(tile: CGPoint(x: 16, y: 54),  type: .Diamond,     size: .S,  direction: nil),
+            Shape(tile: CGPoint(x: 30, y: 54),  type: .Circle,      size: .S,   direction: nil),
+
+            Shape(tile: CGPoint(x: 39, y: 48),  type: .Diamond,     size: .M,  direction: nil),
+            Shape(tile: CGPoint(x: 36, y: 52),  type: .Triangle,    size: .SM,   direction: .Top),
+            Shape(tile: CGPoint(x: 44, y: 50),  type: .Triangle,    size: .M,   direction: .Bottom),
+            Shape(tile: CGPoint(x: 48, y: 54),  type: .Triangle,    size: .S,   direction: .Bottom),
+        ]
+        
+        return shapes
+    }
 }
