@@ -7,30 +7,20 @@
 //
 
 import UIKit
+import CoreData
+
+
+
 
 class StackCollectionViewCell: UICollectionViewScrollCell {
-  let answersDataSource = StackAnswersDataSource()
-  let tagsDataSource = StackTagsDataSource()
 
-  @IBOutlet weak var answersCollectionView: UICollectionView! {
-    didSet {
-      let answerCell = UINib(nibName: "StackAnswerCollectionViewCell", bundle: nil)
-      answersCollectionView.registerNib(answerCell, forCellWithReuseIdentifier: "StackAnswerCellID")
-      answersCollectionView.dataSource = answersDataSource
-      answersCollectionView.delegate = self
-    }
-  }
-  
-  @IBOutlet weak var tagsCollectionView: UICollectionView! {
-    didSet {
-      let tagCell = UINib(nibName: "StackTagCollectionViewCell", bundle: nil)
-      tagsCollectionView.registerNib(tagCell, forCellWithReuseIdentifier: "StackTagCellID")
-      tagsCollectionView.dataSource = tagsDataSource
-    }
-  }
+  @IBOutlet weak var answersCollectionView: StackAnswersCollectionView!
+  @IBOutlet weak var tagsCollectionView: StackTagsCollectionView!
   @IBOutlet weak var pageControl: UIPageControl!
   
+
   required init?(coder aDecoder: NSCoder) {
+    
     super.init(coder: aDecoder)
   }
   
@@ -40,6 +30,9 @@ class StackCollectionViewCell: UICollectionViewScrollCell {
     answersCollectionView.backgroundColor = UIColor.whiteColor()
     tagsCollectionView.backgroundColor = UIColor.whiteColor()
     
+    answersCollectionView.delegate = self
+    
+    backgroundColor = UIColor.stackTan()
   }
   
 

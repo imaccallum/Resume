@@ -14,6 +14,7 @@ import UIKit
 
 class CollectionViewController: UICollectionViewController {
   let pages = ["Home", "Bio", "Education", "Apps", "Stack", "Github", "Contact"]
+//  let pages = ["Home", "Contact", "Stack", "Bio", "Education", "Apps", "Github"]
   var menu: Menu!
   
   override func viewDidLoad() {

@@ -19,11 +19,9 @@ class EducationCollectionViewCell: UICollectionViewScrollCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        print(head.layer.position)
         let temp = head.layer.position
         head.layer.anchorPoint = CGPoint(x: 0, y: 0)
         head.layer.position = temp
-        print(head.layer.position)
 
     }
     
@@ -46,8 +44,7 @@ class EducationCollectionViewCell: UICollectionViewScrollCell {
     }
 
     override func didScroll(withOffset offset: CGPoint) {
-        let percent = offset.y / frame.height
-        print(percent)
+        let _ = offset.y / frame.height
 
 //        head.layer.anchorPoint = CGPoint(x: 0, y: 1)
 //

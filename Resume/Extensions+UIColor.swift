@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+// MARK: - Flat
 extension UIColor {
     private static var flatColors: [UIColor] = []
     
@@ -61,6 +63,7 @@ extension UIColor {
 }
 
 
+// MARK: - Education
 extension UIColor {
 
     static func ufBlue() -> UIColor {
@@ -75,8 +78,55 @@ extension UIColor {
     static func lightBlue() -> UIColor {
         return UIColor(red: 0 / 255, green: 144 / 255, blue: 213 / 255, alpha: 1.0)
     }
-    
-    
-    
-    
 }
+
+
+
+// MARK: - Stack
+extension UIColor {
+  
+  static func stackTan() -> UIColor {
+    return UIColor(red: 255 / 255, green: 248 / 255, blue: 221 / 255, alpha: 1.0)
+  }
+ 
+  static func stackTagBlue() -> UIColor {
+    return UIColor(red: 225 / 255, green: 236 / 255, blue: 244 / 255, alpha: 1.0)
+  }
+  
+  static func stackTagText() -> UIColor {
+    return UIColor(red: 60 / 255, green: 116 / 255, blue: 155 / 255, alpha: 1.0)
+  }
+  static func stackDividerOrange() -> UIColor {
+    return UIColor(red: 244 / 255, green: 156 / 255, blue: 92 / 255, alpha: 1.0)
+  }
+  
+  static func stackDividerGray() -> UIColor {
+    return UIColor(red: 205 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
+  }
+  
+  static func stackGraphGreen() -> UIColor {
+    return UIColor(red: 173 / 255, green: 200 / 255, blue: 159 / 255, alpha: 1.0)
+  }
+  
+  static func stackLabelGray() -> UIColor {
+    return UIColor(red: 153 / 255, green: 153 / 255, blue: 153 / 255, alpha: 1.0)
+  }
+  
+  static func stackBoxText() -> UIColor {
+    return UIColor(red: 119 / 255, green: 119 / 255, blue: 119 / 255, alpha: 1.0)
+  }
+  
+  static func stackBoxOutline() -> UIColor {
+    return UIColor(red: 205 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
+  }
+  
+  static func stackBoxYellow() -> UIColor {
+    return UIColor(red: 225 / 255, green: 230 / 255, blue: 56 / 255, alpha: 1.0)
+  }
+  
+  static func stackBoxGreen() -> UIColor {
+    return UIColor(red: 117 / 255, green: 131 / 255, blue: 94 / 255, alpha: 1.0)
+  }
+}
+
+// MARK: - Git

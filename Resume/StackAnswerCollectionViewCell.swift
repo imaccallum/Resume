@@ -10,5 +10,30 @@ import Foundation
 import UIKit
 
 class StackAnswerCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var textLabel: UILabel!
+  @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var textLabel: UILabel!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    scoreLabel.numberOfLines = 3
+  }
+  
+  func configure(answer: Answer) {
+    let score = answer.score ?? 0
+    let question = answer.question ?? ""
+    
+    scoreLabel.text = "\(score)"
+    textLabel.text = question
+
+    if answer.accepted?.boolValue == true {
+      scoreLabel.backgroundColor = UIColor.stackBoxGreen()
+      scoreLabel.textColor = UIColor.stackBoxYellow()
+    } else {
+      scoreLabel.backgroundColor = nil
+      
+      scoreLabel.textColor = UIColor.stackBoxText()
+    }
+  }
+  
 }

@@ -47,9 +47,8 @@ class HomeCollectionViewCell: UICollectionViewScrollCell {
     }
 
     override func didScroll(withOffset offset: CGPoint) {
-        let percent = offset.y / frame.height
-        print("percent \(percent)")
-        
+        let _ = offset.y / frame.height
+      
 //        let rotation = CATransform3DMakeAffineTransform(CGAffineTransformMakeRotation(4 * CGFloat(M_PI) * percent))
 //        let scale = CATransform3DMakeAffineTransform(CGAffineTransformMakeScale(1 - fabs(percent), 1 - fabs(percent)))
 //        let transform = CATransform3DConcat(rotation, scale)

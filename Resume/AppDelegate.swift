@@ -15,32 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
       
-      
-      
-      
-      Stack.fetchTags() { tags in
-        print("tags")
-        print(tags)
+      // Fetch Data
+      Git.fetchProfile { profile in
+        Git.updateProfile(profile)
       }
       
-      Stack.fetchUser(3810673) { user in
-        print("user")
-        print(user)
+      Git.fetchRepos { repos in
+        repos.forEach { Git.updateRepo($0) }
+      }
+      
+      Stack.fetchUser() { user in
+        Stack.updateUser(user)
+      }
+      
+      Stack.fetchTags() { tags in
+        tags.forEach { Stack.updateTag($0.name, count: $0.count) }
       }
       
       Stack.fetchAnswers { answers in
-        Stack.fetchQuestionTitles(answers.flatMap { $0.questionID }) { questions in
-          print("answers")
-          print(answers)
-          print("questions")
-          print(questions)
-        }
+        answers.forEach { Stack.updateAnswer($0) }
       }
       
-      
-        return true
+      return true
     }
 
     func applicationWillResignActive(application: UIApplication) {

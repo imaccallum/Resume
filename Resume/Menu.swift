@@ -132,7 +132,6 @@ class Menu: NSObject {
     }
     
     func didChangeIndex(index: Int) {
-        print("CHANGE INDEX")
         let image = dataSource.menu(self, nodeForItemAtIndex: index).image()
         indicatorView.updateImage(image)
     }
@@ -265,7 +264,6 @@ class MenuIndicatorView: UIView {
 
     func animateX(constant: CGFloat, duration: NSTimeInterval, completion: SuccessBlock? = nil) {
         edgeConstraint?.constant = constant
-        print("constant \(constant) duration \(duration)")
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseOut, animations: {
             self.superview?.layoutIfNeeded()
         }) { success in

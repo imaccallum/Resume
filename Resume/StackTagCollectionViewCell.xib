@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -16,24 +16,32 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djt-Yo-THZ">
                         <rect key="frame" x="8" y="4" width="80" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="YcF-HP-YBC"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YcF-HP-YBC"/>
+                            </mask>
+                        </variation>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="Djt-Yo-THZ" firstAttribute="top" secondItem="csh-dF-run" secondAttribute="top" constant="4" id="4No-I7-9jp"/>
+                <constraint firstItem="Djt-Yo-THZ" firstAttribute="top" secondItem="csh-dF-run" secondAttribute="top" constant="4" id="Crl-JV-j8J"/>
                 <constraint firstItem="Djt-Yo-THZ" firstAttribute="leading" secondItem="csh-dF-run" secondAttribute="leading" constant="8" id="ZwZ-oG-1cP"/>
-                <constraint firstAttribute="bottom" secondItem="Djt-Yo-THZ" secondAttribute="bottom" constant="4" id="cyd-bp-dAn"/>
                 <constraint firstAttribute="trailing" secondItem="Djt-Yo-THZ" secondAttribute="trailing" constant="8" id="rxG-pd-8Fn"/>
+                <constraint firstAttribute="bottom" secondItem="Djt-Yo-THZ" secondAttribute="bottom" constant="4" id="vxe-Y1-Xht"/>
             </constraints>
-            <size key="customSize" width="96" height="32"/>
+            <size key="customSize" width="95" height="39"/>
             <connections>
                 <outlet property="textLabel" destination="Djt-Yo-THZ" id="iPp-M1-Wi3"/>
             </connections>
-            <point key="canvasLocation" x="157" y="271"/>
+            <point key="canvasLocation" x="156" y="274"/>
         </collectionViewCell>
     </objects>
 </document>

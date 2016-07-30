@@ -2,11 +2,26 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
     <entity name="Answer" representedClassName=".Answer" syncable="YES">
         <attribute name="accepted" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="answerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="questionID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="questionTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Profile" representedClassName=".Profile" syncable="YES">
+        <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="followers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="following" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repoCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Repo" representedClassName=".Repo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES">
         <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -17,17 +32,19 @@
         <attribute name="answerCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="bronze" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="gold" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reputation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="silver" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="upVoteCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="viewCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Answer" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Tag" positionX="-54" positionY="-9" width="128" height="75"/>
-        <element name="User" positionX="-36" positionY="9" width="128" height="210"/>
+        <element name="Answer" positionX="-299" positionY="72" width="128" height="120"/>
+        <element name="Tag" positionX="-299" positionY="-18" width="128" height="75"/>
+        <element name="User" positionX="-441" positionY="-18" width="128" height="210"/>
+        <element name="Profile" positionX="-92" positionY="-18" width="128" height="163"/>
+        <element name="Repo" positionX="-90" positionY="153" width="128" height="103"/>
     </elements>
 </model>

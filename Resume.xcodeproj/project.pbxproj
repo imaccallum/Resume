@@ -14,10 +14,15 @@
 		8202D51D1C5F2D4B00CC66DD /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D5171C5F2D4B00CC66DD /* Tag.swift */; };
 		8202D51E1C5F2D4B00CC66DD /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D5181C5F2D4B00CC66DD /* Answer+CoreDataProperties.swift */; };
 		8202D51F1C5F2D4B00CC66DD /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D5191C5F2D4B00CC66DD /* Answer.swift */; };
+		8202D5251C5FE20900CC66DD /* StackTagsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D5241C5FE20900CC66DD /* StackTagsCollectionView.swift */; };
+		8202D5271C5FE6B800CC66DD /* StackAnswersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D5261C5FE6B800CC66DD /* StackAnswersCollectionView.swift */; };
+		8202D52A1C61435F00CC66DD /* GitWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D5291C61435F00CC66DD /* GitWebService.swift */; };
+		8202D52F1C61513500CC66DD /* Repo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D52B1C61513500CC66DD /* Repo+CoreDataProperties.swift */; };
+		8202D5301C61513500CC66DD /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D52C1C61513500CC66DD /* Repo.swift */; };
+		8202D5311C61513500CC66DD /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D52D1C61513500CC66DD /* Profile+CoreDataProperties.swift */; };
+		8202D5321C61513500CC66DD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202D52E1C61513500CC66DD /* Profile.swift */; };
 		822AE3FE1C51E2AF00953F69 /* StackTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822AE3FD1C51E2AF00953F69 /* StackTagCollectionViewCell.xib */; };
 		822AE4001C51E31500953F69 /* StackTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822AE3FF1C51E31500953F69 /* StackTagCollectionViewCell.swift */; };
-		822AE4031C51E50100953F69 /* StackTagsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822AE4021C51E50100953F69 /* StackTagsDataSource.swift */; };
-		822AE4051C51E50F00953F69 /* StackAnswersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822AE4041C51E50F00953F69 /* StackAnswersDataSource.swift */; };
 		825129571C4E0B9F00CB81E4 /* futura-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 825129561C4E0B9F00CB81E4 /* futura-bold.ttf */; };
 		8254C0C51BEA953500DBEF14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8254C0C41BEA953500DBEF14 /* AppDelegate.swift */; };
 		8254C0CA1BEA953500DBEF14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8254C0C81BEA953500DBEF14 /* Main.storyboard */; };
@@ -67,10 +72,15 @@
 		8202D5171C5F2D4B00CC66DD /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = Resume/Tag.swift; sourceTree = "<group>"; };
 		8202D5181C5F2D4B00CC66DD /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Answer+CoreDataProperties.swift"; path = "Resume/Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8202D5191C5F2D4B00CC66DD /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Answer.swift; path = Resume/Answer.swift; sourceTree = "<group>"; };
+		8202D5241C5FE20900CC66DD /* StackTagsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTagsCollectionView.swift; sourceTree = "<group>"; };
+		8202D5261C5FE6B800CC66DD /* StackAnswersCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackAnswersCollectionView.swift; sourceTree = "<group>"; };
+		8202D5291C61435F00CC66DD /* GitWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitWebService.swift; sourceTree = "<group>"; };
+		8202D52B1C61513500CC66DD /* Repo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Repo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8202D52C1C61513500CC66DD /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		8202D52D1C61513500CC66DD /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8202D52E1C61513500CC66DD /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		822AE3FD1C51E2AF00953F69 /* StackTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		822AE3FF1C51E31500953F69 /* StackTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		822AE4021C51E50100953F69 /* StackTagsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTagsDataSource.swift; sourceTree = "<group>"; };
-		822AE4041C51E50F00953F69 /* StackAnswersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackAnswersDataSource.swift; sourceTree = "<group>"; };
 		825129561C4E0B9F00CB81E4 /* futura-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "futura-bold.ttf"; sourceTree = "<group>"; };
 		8254C0C11BEA953500DBEF14 /* Resume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8254C0C41BEA953500DBEF14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				8202D5121C5F22B800CC66DD /* StackWebService.swift */,
+				8202D5291C61435F00CC66DD /* GitWebService.swift */,
 			);
 			name = "Web Services";
 			sourceTree = "<group>";
@@ -161,9 +172,30 @@
 		8202D5231C5F30A600CC66DD /* Subclasses+NSManagedObject */ = {
 			isa = PBXGroup;
 			children = (
+				8202D5331C61514300CC66DD /* Git */,
 				8202D5201C5F2D5400CC66DD /* Stack */,
 			);
 			name = "Subclasses+NSManagedObject";
+			sourceTree = "<group>";
+		};
+		8202D5281C5FE77500CC66DD /* Collection Views */ = {
+			isa = PBXGroup;
+			children = (
+				8202D5241C5FE20900CC66DD /* StackTagsCollectionView.swift */,
+				8202D5261C5FE6B800CC66DD /* StackAnswersCollectionView.swift */,
+			);
+			name = "Collection Views";
+			sourceTree = "<group>";
+		};
+		8202D5331C61514300CC66DD /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				8202D52B1C61513500CC66DD /* Repo+CoreDataProperties.swift */,
+				8202D52C1C61513500CC66DD /* Repo.swift */,
+				8202D52D1C61513500CC66DD /* Profile+CoreDataProperties.swift */,
+				8202D52E1C61513500CC66DD /* Profile.swift */,
+			);
+			name = Git;
 			sourceTree = "<group>";
 		};
 		822AE4011C51E36000953F69 /* Cells */ = {
@@ -175,15 +207,6 @@
 				8292F9121C4ECDFC008B3CBD /* StackAnswerCollectionViewCell.swift */,
 			);
 			name = Cells;
-			sourceTree = "<group>";
-		};
-		822AE4061C51E52D00953F69 /* Data Sources */ = {
-			isa = PBXGroup;
-			children = (
-				822AE4021C51E50100953F69 /* StackTagsDataSource.swift */,
-				822AE4041C51E50F00953F69 /* StackAnswersDataSource.swift */,
-			);
-			name = "Data Sources";
 			sourceTree = "<group>";
 		};
 		825129551C4E0B7500CB81E4 /* Fonts */ = {
@@ -321,7 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				822AE4011C51E36000953F69 /* Cells */,
-				822AE4061C51E52D00953F69 /* Data Sources */,
+				8202D5281C5FE77500CC66DD /* Collection Views */,
 				8254C0F21BEA957B00DBEF14 /* StackCollectionViewCell.swift */,
 				82F99B171C5033DA001486B0 /* StackCollectionViewCell.xib */,
 				8292F9161C4ED008008B3CBD /* StackScrollFlowLayout.swift */,
@@ -442,24 +465,28 @@
 			files = (
 				8202D51D1C5F2D4B00CC66DD /* Tag.swift in Sources */,
 				822AE4001C51E31500953F69 /* StackTagCollectionViewCell.swift in Sources */,
+				8202D5271C5FE6B800CC66DD /* StackAnswersCollectionView.swift in Sources */,
 				8254C0CD1BEA953500DBEF14 /* Resume.xcdatamodeld in Sources */,
 				8254C0DD1BEA956500DBEF14 /* Extensions+NSDate.swift in Sources */,
+				8202D52F1C61513500CC66DD /* Repo+CoreDataProperties.swift in Sources */,
 				8292F9131C4ECDFC008B3CBD /* StackAnswerCollectionViewCell.swift in Sources */,
 				82AA1F3B1C3AAFC000D366AC /* Extensions+UIKit.swift in Sources */,
 				82A0F0F41C319FC800A75109 /* Extensions+Foundation.swift in Sources */,
 				8202D51F1C5F2D4B00CC66DD /* Answer.swift in Sources */,
 				8254C0FA1BEA957B00DBEF14 /* ContactCollectionViewCell.swift in Sources */,
+				8202D5301C61513500CC66DD /* Repo.swift in Sources */,
 				8254C0DE1BEA956500DBEF14 /* Extensions+UIColor.swift in Sources */,
 				8202D51B1C5F2D4B00CC66DD /* User.swift in Sources */,
 				8254C0FD1BEA957B00DBEF14 /* EducationCollectionViewCell.swift in Sources */,
-				822AE4051C51E50F00953F69 /* StackAnswersDataSource.swift in Sources */,
 				8292F9171C4ED008008B3CBD /* StackScrollFlowLayout.swift in Sources */,
+				8202D5321C61513500CC66DD /* Profile.swift in Sources */,
+				8202D5251C5FE20900CC66DD /* StackTagsCollectionView.swift in Sources */,
 				8254C0E11BEA957000DBEF14 /* CollectionViewController.swift in Sources */,
-				822AE4031C51E50100953F69 /* StackTagsDataSource.swift in Sources */,
 				82FA4EF91C34CC4B0076650E /* Extensions+UIView.swift in Sources */,
 				82F99B1B1C514D3F001486B0 /* TextViewAutoHeight.swift in Sources */,
 				8254C1021BEA957B00DBEF14 /* HomeCollectionViewCell.swift in Sources */,
 				82EBDDCE1C595BA90018F609 /* Extensions+Typealias.swift in Sources */,
+				8202D52A1C61435F00CC66DD /* GitWebService.swift in Sources */,
 				8254C0C51BEA953500DBEF14 /* AppDelegate.swift in Sources */,
 				8202D51E1C5F2D4B00CC66DD /* Answer+CoreDataProperties.swift in Sources */,
 				8254C1051BEA957B00DBEF14 /* StackCollectionViewCell.swift in Sources */,
@@ -471,6 +498,7 @@
 				8254C0E21BEA957000DBEF14 /* UICollectionViewScrollCell.swift in Sources */,
 				8254C0DC1BEA956500DBEF14 /* Extensions.swift in Sources */,
 				82AA1F391C3A979C00D366AC /* ShapeKit+Layout.swift in Sources */,
+				8202D5311C61513500CC66DD /* Profile+CoreDataProperties.swift in Sources */,
 				8202D5131C5F22B800CC66DD /* StackWebService.swift in Sources */,
 				8254C0F61BEA957B00DBEF14 /* AppsCollectionViewCell.swift in Sources */,
 				8254C0F81BEA957B00DBEF14 /* BioCollectionViewCell.swift in Sources */,

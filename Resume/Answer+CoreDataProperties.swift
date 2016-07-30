@@ -15,8 +15,8 @@ import CoreData
 extension Answer {
 
     @NSManaged var questionID: NSNumber?
-    @NSManaged var questionTitle: String?
-    @NSManaged var answerID: NSNumber?
+    @NSManaged var question: String?
+    @NSManaged var id: NSNumber?
     @NSManaged var link: String?
     @NSManaged var accepted: NSNumber?
     @NSManaged var score: NSNumber?

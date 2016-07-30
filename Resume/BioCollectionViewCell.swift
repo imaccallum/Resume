@@ -57,7 +57,6 @@ class AVPlayerView: UIView {
   override func layoutSubviews() {
     super.layoutSubviews()
     playerLayer?.frame = layer.bounds
-    print(layer.bounds)
   }
   
   func viewTapped(sender: UITapGestureRecognizer) {
