@@ -52,26 +52,26 @@ struct GitRepo {
 
 struct Git {
   static var context: NSManagedObjectContext {
-    return (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    return (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
   }
 }
 
 extension Git {
   
-  static func fetchProfile(completion: GitProfile -> ()) {
-    let url = NSURL(string: "https://api.github.com/users/imaccallum")!
+  static func fetchProfile(completion: @escaping (GitProfile) -> ()) {
+    let url = URL(string: "https://api.github.com/users/imaccallum")!
     
-    NSURLSession.sharedSession().dataTaskWithURL(url) { data, response, error in
-      guard let data = data, dict = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? NSDictionary, user = dict as? [String: AnyObject] else { return }
+    URLSession.shared.dataTask(with: url as URL) { data, response, error in
+      guard let data = data, let dict = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary, let user = dict as? [String: AnyObject] else { return }
       completion(GitProfile(dict: user))
     }.resume()
   }
   
-  static func fetchRepos(completion: [GitRepo] -> ()) {
-    let url = NSURL(string: "https://api.github.com/users/imaccallum/repos")!
+  static func fetchRepos(completion: @escaping ([GitRepo]) -> ()) {
+    let url = URL(string: "https://api.github.com/users/imaccallum/repos")!
 
-    NSURLSession.sharedSession().dataTaskWithURL(url) { data, response, error in
-      guard let data = data, array = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? NSArray, items = array as? [[String: AnyObject]] else { return }
+    URLSession.shared.dataTask(with: url) { data, response, error in
+      guard let data = data, let array = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSArray, let items = array as? [[String: AnyObject]] else { return }
       let repos = items.map { GitRepo(dict: $0) }
       completion(repos)
     }.resume()
@@ -82,16 +82,16 @@ extension Git {
 extension Git {
   // Create
   static func createProfile(profile: GitProfile) {
-    let newProfile = NSEntityDescription.insertNewObjectForEntityForName("Profile", inManagedObjectContext: context) as? Profile
-    newProfile?.id = profile.id
+    let newProfile = NSEntityDescription.insertNewObject(forEntityName: "Profile", into: context) as? Profile
+		newProfile?.id = NSNumber(value: profile.id!)
     newProfile?.user = profile.user
     newProfile?.name = profile.name
     newProfile?.location = profile.location
     newProfile?.avatar = profile.avatar
     
-    newProfile?.followers = profile.followers
-    newProfile?.following = profile.following
-    newProfile?.repoCount = profile.repoCount
+    newProfile?.followers = NSNumber(value: profile.followers ?? 0)
+    newProfile?.following = NSNumber(value: profile.following ?? 0)
+    newProfile?.repoCount = NSNumber(value: profile.repoCount ?? 0)
   }
   
   // Read

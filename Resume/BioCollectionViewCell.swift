@@ -44,7 +44,7 @@ class AVPlayerView: UIView {
     super.awakeFromNib()
     
     guard let path = NSBundle.mainBundle().pathForResource("movie", ofType: "mp4") else { return }
-    let url = NSURL(fileURLWithPath: path)
+    let url = URL(fileURLWithPath: path)
     let player = AVPlayer(URL: url)
     playerLayer = AVPlayerLayer(player: player)
     layer.addSublayer(playerLayer)

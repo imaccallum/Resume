@@ -161,7 +161,7 @@ extension CollectionViewController: MenuDelegate {
   }
   
   func menu(menu: Menu, didUpdateWithPercent percent: CGFloat) {
-    guard let contentHeight = collectionView?.contentSize.height, height = collectionView?.frame.height else { return }
+    guard let contentHeight = collectionView?.contentSize.height, let height = collectionView?.frame.height else { return }
     collectionView?.contentOffset.y = percent * (contentHeight - height)
   }
   

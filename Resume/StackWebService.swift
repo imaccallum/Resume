@@ -65,33 +65,33 @@ struct StackUser {
 
 struct Stack {
   static var context: NSManagedObjectContext {
-    return (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    return (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
   }
 }
 
 // MARK: - Web Service
 extension Stack {
   
-  private static func fetchStackRequest(url: NSURL, completion: ([[String: AnyObject]]) -> ()) {
-    NSURLSession.sharedSession().dataTaskWithURL(url) { data, response, error in
+  private static func fetchStackRequest(url: URL, completion: @escaping ([[String: AnyObject]]) -> ()) {
+    URLSession.shared.dataTask(with: url as URL) { data, response, error in
       
-      guard let data = data, dict = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? NSDictionary, items = dict?["items"] as? [[String: AnyObject]] else { return }
+      guard let data = data, let dict = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary, let items = dict?["items"] as? [[String: AnyObject]] else { return }
       completion(items)
       }.resume()
   }
   
-  static func fetchAnswers(completion: [StackAnswer] -> ()) {
+  static func fetchAnswers(completion: @escaping ([StackAnswer]) -> ()) {
     
-    let url = NSURL(string: "https://api.stackexchange.com/2.2/users/3810673/answers?order=desc&sort=votes&site=stackoverflow&filter=!)s))yOCYWlGW-j97TO1h")!
+    let url = URL(string: "https://api.stackexchange.com/2.2/users/3810673/answers?order=desc&sort=votes&site=stackoverflow&filter=!)s))yOCYWlGW-j97TO1h")!
     
-    fetchStackRequest(url) { items in
+    fetchStackRequest(url: url) { items in
       let answers = items.map { StackAnswer(dict: $0) }
-      completion(answers ?? [])
+      completion(answers )
     }
   }
     
-  static func fetchTags(completion: [StackTag] -> ()) {
-    let url = NSURL(string: "https://api.stackexchange.com/2.2/users/3810673/tags?order=desc&min=10&sort=popular&site=stackoverflow&filter=!-.G.68phH_FJ")!
+  static func fetchTags(completion: ([StackTag]) -> ()) {
+    let url = URL(string: "https://api.stackexchange.com/2.2/users/3810673/tags?order=desc&min=10&sort=popular&site=stackoverflow&filter=!-.G.68phH_FJ")!
     fetchStackRequest(url) { items in
       let tags = items.map { StackTag(count: $0["count"] as? Int, name: $0["name"] as? String) }
       completion(tags)
@@ -99,7 +99,7 @@ extension Stack {
   }
   
   static func fetchUser(completion: StackUser -> ()) {
-    let url = NSURL(string: "https://api.stackexchange.com/2.2/users/3810673?order=desc&sort=reputation&site=stackoverflow&filter=!-*f(6q9Y*e_4")!
+    let url = URL(string: "https://api.stackexchange.com/2.2/users/3810673?order=desc&sort=reputation&site=stackoverflow&filter=!-*f(6q9Y*e_4")!
     fetchStackRequest(url) { items in
       guard let user = items.first else { return }
       completion(StackUser(dict: user))

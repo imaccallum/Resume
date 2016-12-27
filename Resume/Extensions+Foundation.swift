@@ -27,7 +27,7 @@ extension CGRect {
 }
 
 extension CGPoint {
-    init(angle: CGFloat, radius: CGFloat, center: CGPoint = CGPointZero) {
+    init(angle: CGFloat, radius: CGFloat, center: CGPoint = CGPoint.zero) {
         self.init(x: radius * cos(angle) + center.x, y: radius * sin(angle) + center.y)
     }
     
@@ -45,7 +45,7 @@ extension CGSize {
 
 
 public func >(lhs: NSIndexPath, rhs: NSIndexPath) -> Bool {
-    return lhs.compare(rhs) == .OrderedDescending
+    return lhs.compare(rhs as IndexPath) == .orderedDescending
 }
 
 
@@ -86,21 +86,21 @@ func / (left: CGPoint, right: CGFloat) -> CGPoint {
 }
 
 func == (left: CGPoint, right: CGPoint) -> Bool {
-    return CGPointEqualToPoint(left, right)
+    return left.equalTo(right)
 }
 
-func += (inout left: CGPoint, right: CGPoint) {
+func += ( left: inout CGPoint, right: CGPoint) {
     left = left + right
 }
 
-func -= (inout left: CGPoint, right: CGPoint) {
+func -= ( left: inout CGPoint, right: CGPoint) {
     left = left - right
 }
 
-func *= (inout left: CGPoint, right: CGFloat) {
+func *= ( left: inout CGPoint, right: CGFloat) {
     left = left * right
 }
 
-func /= (inout left: CGPoint, right: CGFloat) {
+func /= ( left: inout CGPoint, right: CGFloat) {
     left = left / right
 }
